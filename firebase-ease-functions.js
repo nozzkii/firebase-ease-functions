@@ -16,7 +16,7 @@ function getDbRef(ref){
 }
 
 function getChildSize(ref){
-ref.on('value', function(snapshot) {
+getDbRef(ref).on('value', function(snapshot) {
    num = snapshot.numChildren();
 });
 return num;
@@ -30,5 +30,15 @@ function queryDb(ref){
 });
 
 }
+
+function collectData(ref, arr, child){
+  for (const i = 0; i < arr.length;; i++) {
+  let increment = getDbRef(ref).child("'" + child +"'"+i);
+  for (const key in arr[i]) {
+    increment.child(key).set(arr[i][key]);
+    }
+  }
+}
+
 
 }
