@@ -1,2 +1,2 @@
 # firebase-ease-functions
-Comfortable js functions to query / create data in "Firebase Realtime Database"
+js functions to comfortable query / create data in "Firebase Realtime Database"
